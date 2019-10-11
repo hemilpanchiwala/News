@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Text, StyleSheet} from 'react-native';
+import {Text, StyleSheet, View} from 'react-native';
 import {Container, Header, Left, Right, Body, Tab, Tabs, Title} from 'native-base';
 import Tab3 from './Tab3';
 import Tab2 from './Tab2';
@@ -10,33 +10,29 @@ export default class TabScreen extends Component {
     render() {
         return (
             <Container>
-                <Header hasTabs style={styles.header}>
-                    <Left />
-                    <Body>
-                        <Text style={styles.heading}>Newss</Text>
-                    </Body>
-                    <Right />
-                </Header>
+                <View style={styles.header}>
+                    <Text style={styles.heading}>News</Text>
+                </View>
                 <Tabs>
                     <Tab tabStyle={{backgroundColor: '#009387'}} 
                     activeTabStyle={{backgroundColor: '#009387'}} 
                     textStyle={{color: 'white'}}
                     activeTextStyle={{color: 'white'}}
-                    heading="Tab1">
+                    heading="General">
                         <Tab1 />
                     </Tab>
                     <Tab tabStyle={{backgroundColor: '#009387'}} 
                     activeTabStyle={{backgroundColor: '#009387'}} 
                     textStyle={{color: 'white'}}
                     activeTextStyle={{color: 'white'}}
-                    heading="Tab2">
+                    heading="Sports">
                         <Tab2 />
                     </Tab>
                     <Tab tabStyle={{backgroundColor: '#009387'}} 
                     activeTabStyle={{backgroundColor: '#009387'}} 
                     textStyle={{color: 'white'}}
                     activeTextStyle={{color: 'white'}}
-                    heading="Tab3">
+                    heading="Technology">
                         <Tab3 />
                     </Tab>
                 </Tabs>
@@ -48,12 +44,11 @@ export default class TabScreen extends Component {
 const styles = StyleSheet.create({
     heading: {
         color: 'white',
-        justifyContent: 'center',
-        alignItems: 'center',
         fontWeight: 'bold',
-        fontSize: 35
+        fontSize: 20
     },
     header: {
+        padding: 20,
         backgroundColor: '#009387'
     }
 })
