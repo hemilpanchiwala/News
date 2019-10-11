@@ -18,7 +18,12 @@ export default class ModalComponent extends Component {
   }
 
   onHandleShare = () => {
-      
+    const {url, title} = this.props.articleData
+    let message = `${title}\n\n See more at ${url}\n\n Shared by News App`
+    return Share.share(
+        {title, message, url: message},
+        {dialogTitle: `Share ${title}`}
+    )
   }
 
   onError = () => {
